@@ -1,10 +1,44 @@
 const jsmediatags = window.jsmediatags;
+const audio = document.querySelector('#audio');
+
+document.querySelector("#input").addEventListener("change", (event) => {
+  
+  const file = event.target.files[0];
+
+  jsmediatags.read(file, {
+    onSuccess: function(tag) { 
+
+      // Array buffer to base64
+      const data = tag.tags.picture.data;
+      const format = tag.tags.picture.format;
+      let base64String = "";
+      for (let i = 0; i < data.length; i++) {
+        base64String += String.fromCharCode(data[i]);
+      }
+
+      // Output media tags
+      document.querySelector("#cover").style.backgroundImage = `url(data:${format};base64,${window.btoa(base64String)})`;
+      
+      document.querySelector("#title").textContent = tag.tags.title;
+      document.querySelector("#artist").textContent = tag.tags.artist;
+      const control = document.createElement('source');
+      control.id = 'control';
+      control.type = "audio/mpeg";
+      audio.src = URL.createObjectURL(file);
+      audio.appendChild(control);
+      },
+      onError: function(error) {
+        console.log(error);
+      }
+  });  
+});
+
+/*
 const musicContainter = document.querySelector('.menu');
 const title = document.querySelector('#title');
 const artist = document.querySelector('#artist');
 const cover = document.querySelector('#cover');
 const control = document.querySelector('#audioControl');
-
 
 // song titles
 const songs = ['dancing queen', 'flower', 'nowhere'];
@@ -27,5 +61,5 @@ function loadSong(song){
     cover.src = 'images/'+song+'.jpg';
     control.appendChild(audio);
 }
-
+*/
 //event listener

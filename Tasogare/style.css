@@ -311,3 +311,30 @@ body{
 	height:auto;
 	clip-path:circle(1vw at center);
 }
+
+#uploadContent{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+}
+
+#uploadContent h2{
+	margin-bottom: 1px;
+}
+
+#uploadContent p{
+	margin-top: 3px;
+}
+
+#uploadContent input{
+	margin-top: 18px;
+	margin-bottom: 5px;
+}
+
+#cover{
+	width: 375px;
+	height: 375px;
+	background-position: center;
+	background-size: cover;
+}
