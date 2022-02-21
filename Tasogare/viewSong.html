@@ -11,7 +11,7 @@
 
 <body>
   <div id="header">
-    <img id="logo" src="images/logo.png">
+    <a href="index.html"><img id="logo" src="images/logo.png"></a>
     <div class="searchbar">
         <input type="text">
         <form action="search.html">
@@ -34,8 +34,8 @@
       <div id="player">
         <div id="songInfo">
           <div id="songName">
-            <h2 id="title"></h2>
-            <h3 id="artist"></h3>
+            <h2 id="title">nowhere</h2>
+            <h3 id="artist">Fern.</h3>
           </div>
           <div id="songDate">
             <h4>1 year ago</h4>
@@ -44,12 +44,13 @@
         
         <div id="songPlayer">
           <audio controls id="audioControl">
+            <source src="music/nowhere.m4a">
           </audio>
         </div>
       </div>
       <!--Song Image-->
       <div id="playerImage">
-        <img src="images/fern.jpg" id="cover">
+        <img src="images/walkerdream.jpg" id="cover">
       </div>
     </div>
 
@@ -65,7 +66,6 @@
           <div id="commentButtons">
             <h3>Upvote</h3>
             <h3>Downvote</h3>
-            <h3>Download song</h3>
           </div>
         </div>
 

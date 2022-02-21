@@ -19,8 +19,11 @@ document.querySelector("#input").addEventListener("change", (event) => {
       // Output media tags
       document.querySelector("#cover").style.backgroundImage = `url(data:${format};base64,${window.btoa(base64String)})`;
       
+      // Output song title and artist
       document.querySelector("#title").textContent = tag.tags.title;
       document.querySelector("#artist").textContent = tag.tags.artist;
+
+      // Load song into player
       const control = document.createElement('source');
       control.id = 'control';
       control.type = "audio/mpeg";
