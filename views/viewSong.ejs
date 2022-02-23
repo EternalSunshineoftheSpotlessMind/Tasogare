@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+    <title>Tasogare | <%= title %></title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+
+  <div class="content">
+    <div class="menu">
+      <!--Big div on the left-->
+      <div id="player">
+        <div id="songInfo">
+          <div id="songName">
+            <h2 id="title"></h2>
+            <h3 id="artist"></h3>
+          </div>
+        </div>
+        
+        <div id="songPlayer">
+          <audio controls id="audioControl">
+            <source src="/audio/<%= valid %>">
+          </audio>
+        </div>
+      </div>
+      <!--Song Image-->
+      <div id="playerImage">
+        <img src="/images/dreamwalker.jpg" id="cover">
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div id="songComments">
+        <div id="commentMenu">
+          <div id="commentWrite">
+            <img src="/images/ice.png">
+            <input class="textbox" type="text" placeholder="Write a comment">
+              <input type="submit">
+            </form>
+          </div>
+          <div id="commentButtons">
+            <h3>Upvote</h3>
+            <h3>Downvote</h3>
+          </div>
+        </div>
+
+        <div id="commentView">
+          <div id="commentArtist">
+            <img src="/images/fern2.jfif">
+            <h2>Fern.</h2>
+            <h4>View profile</h4>
+          </div>
+          <div id="commentList">
+            <h2>Comments</h2>
+            <div class="comment">
+              <img src="/images/ice.png">
+              <div id="commentText">
+                <h3>Nanam</h3>
+                <h2>im pushin P</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="songOthers">
+        <div class="otherList">
+          <div>
+            <h2>Other songs</h2>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>Nanam</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>IceGreenLeaf12</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>Binjinning</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>Paddy</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>jzdotes</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>yort</h3>
+          </div>
+          <div class="other">
+            <img src="/images/ice.png">
+            <h3>otomiju</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/songScript.js"></script>
+</body>

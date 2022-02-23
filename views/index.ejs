@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Tasogare | <%= title %></title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+    
+    <div id="main">
+        <div id="content">
+            <h1>Tasogare</h1>
+            <div class="feed">
+                <div class="container">
+                    <h2>Your music</h2>
+                    <div class="row1">
+                        <% if(files){ %>
+                            <% files.forEach(function(file) { %>
+                                <div id="songPlayer">
+                                    <% if(file.isAudio) { %>
+                                        <audio controls id="audioControl">
+                                            <source src="/audio/<%= file.filename %>" alt="">
+                                        </audio>
+                                    <% } else { %>
+                                        <%= file.filename %>
+                                    <% } %>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No files in database</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="users">
+			<div class="userslist">
+				<div>
+					<h2>Other Users</h2>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>Nanam</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>IceGreenLeaf12</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>Binjinning</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>Paddy</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>jzdotes</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>yort</h3>
+				</div>
+				<div class="user">
+					<img src="images/ice.png">
+					<h3>otomiju</h3>
+				</div>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

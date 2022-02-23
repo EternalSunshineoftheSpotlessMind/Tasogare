@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>    
+    <link rel="stylesheet" href="/style.css">
+    <title>Tasogare | <%= title %></title>
+</head>
+
+<body>
+  <%- include('./partials/header.ejs') %>
+
+  <div id="uploadContent">
+    <h1>Upload your song</h1>
+
+    <form action="/upload" method="POST" id="songUpload" enctype="multipart/form-data">
+      <div id="cover">
+      </div>
+      <h2 id="title"></h2>
+      <p id="artist"></p>
+      <audio controls id="audio">
+      </audio>
+      <input type="file" name="file" id="input" accept=".mp3, .m4a, .wav, .flac">
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
